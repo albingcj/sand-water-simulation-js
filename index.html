@@ -1,50 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Falling Sand Simulation</title>
-        <link rel="stylesheet" href="css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Falling Sand Simulation</title>
+    <link rel="stylesheet" href="css/styles.css">
 
-    </head>
-    <body>
-        <div class="container">
-            <h1>Falling Sand Simulation</h1>
-            <div class="game-container" id="game-container"></div>
+</head>
+<body>
+    <header>
+        <h1>Advanced Falling Sand Simulation</h1>
+    </header>
 
-            <div class="controls">
-                <div class="control-row">
-                    <div class="material-selector">
-                        <button class="material-button active"
-                            data-material="sand">Sand</button>
-                        <button class="material-button"
-                            data-material="water">Water</button>
-                        <button class="material-button"
-                            data-material="wall">Wall</button>
+    <div class="main-container">
+        <div class="game-container" id="game-container"></div>
+        
+        <div class="controls-section">
+            <div class="control-panel">
+                <div class="panel-section">
+                    <div class="section-title">Materials</div>
+                    <div class="material-palette">
+                        <button class="material-button active" data-material="sand">Sand</button>
+                        <button class="material-button" data-material="water">Water</button>
+                        <button class="material-button" data-material="oil">Oil</button>
+                        <button class="material-button" data-material="fire">Fire</button>
+                        <button class="material-button" data-material="plant">Plant</button>
+                        <button class="material-button" data-material="acid">Acid</button>
+                        <button class="material-button" data-material="ice">Ice</button>
+                        <button class="material-button" data-material="steam">Steam</button>
+                        <button class="material-button" data-material="wall">Wall</button>
+                        <button class="material-button" data-material="eraser">Eraser</button>
                     </div>
-                    <button id="clear-button">Clear</button>
                 </div>
 
-                <div class="control-row">
-                    <div class="slider-container">
-                        <label for="particle-size">Particle Size:</label>
-                        <input type="range" id="particle-size" min="1" max="5"
-                            value="2" step="1">
-                        <span id="size-value" class="value-display">2</span>
+                <div class="panel-section">
+                    <div class="section-title">Drawing Tools</div>
+                    <div class="tools-grid">
+                        <button class="tool-button active" data-tool="brush">Brush</button>
+                        <button class="tool-button" data-tool="line">Line</button>
+                        <button class="tool-button" data-tool="rect">Rectangle</button>
+                        <button class="tool-button" data-tool="circle">Circle</button>
                     </div>
                 </div>
 
-                <div class="control-row">
-                    <div class="slider-container">
-                        <label for="gravity-strength">Gravity:</label>
-                        <input type="range" id="gravity-strength" min="1"
-                            max="5" value="1" step="1">
-                        <span id="gravity-value" class="value-display">1</span>
+                <div class="panel-section">
+                    <div class="section-title">Preset Structures</div>
+                    <div class="preset-grid">
+                        <button class="preset-button" data-preset="barrier">Barrier</button>
+                        <button class="preset-button" data-preset="funnel">Funnel</button>
+                        <button class="preset-button" data-preset="container">Container</button>
+                        <button class="preset-button" data-preset="hourglass">Hourglass</button>
+                        <button class="preset-button" data-preset="maze">Maze</button>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <script src="js/sand-game.js"></script>
-    </body>
+            <div class="control-panel">
+                <div class="panel-section">
+                    <div class="section-title">Physics Controls</div>
+                    <div class="slider-container">
+                        <label for="particle-size">Particle Size:</label>
+                        <input type="range" id="particle-size" min="1" max="5" value="2" step="1">
+                        <span id="size-value" class="value-display">2</span>
+                    </div>
+                    
+                    <div class="slider-container">
+                        <label for="gravity-strength">Gravity:</label>
+                        <input type="range" id="gravity-strength" min="1" max="5" value="1" step="1">
+                        <span id="gravity-value" class="value-display">1</span>
+                    </div>
+                    
+                    <div class="slider-container">
+                        <label for="brush-size">Brush Size:</label>
+                        <input type="range" id="brush-size" min="1" max="10" value="3" step="1">
+                        <span id="brush-value" class="value-display">3</span>
+                    </div>
+                    
+                    <div class="slider-container">
+                        <label for="sim-speed">Sim Speed:</label>
+                        <input type="range" id="sim-speed" min="1" max="5" value="1" step="1">
+                        <span id="speed-value" class="value-display">1</span>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <div class="section-title">Actions</div>
+                    <div class="utility-buttons">
+                        <button id="clear-button">Clear All</button>
+                        <button id="screenshot-button">Take Screenshot</button>
+                        <button id="pause-button">Pause/Play</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="keyboard-shortcuts">
+                <div class="section-title">Keyboard Shortcuts</div>
+                <table>
+                    <tr>
+                        <td><kbd>1-9</kbd> Select materials</td>
+                        <td><kbd>B</kbd> Brush tool</td>
+                        <td><kbd>L</kbd> Line tool</td>
+                        <td><kbd>R</kbd> Rectangle tool</td>
+                        <td><kbd>C</kbd> Circle tool</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>[</kbd> / <kbd>]</kbd> Adjust brush size</td>
+                        <td><kbd>Space</kbd> Pause/Play</td>
+                        <td><kbd>Delete</kbd> Clear screen</td>
+                        <td><kbd>S</kbd> Screenshot</td>
+                        <td><kbd>E</kbd> Eraser</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sand-game.js"></script>
+</body>
 </html>
