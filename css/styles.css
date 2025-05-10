@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.game-container {
+width: 600px;
+height: 400px;
+background-color: #111;
+border: 2px solid #444;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+position: relative; /* For proper positioning of canvas */
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.material-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.material-button {
+    background-color: #333;
+}
+
+.material-button.active {
+    background-color: #666;
+}
+
+.slider-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-container label {
+    min-width: 100px;
+}
+
+.slider-container input[type="range"] {
+    flex: 1;
+}
+
+.value-display {
+    min-width: 30px;
+    text-align: center;
+}
+
+canvas {
+    display: block;
+}

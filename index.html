@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Falling Sand Simulation</title>
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Falling Sand Simulation</h1>
+            <div class="game-container" id="game-container"></div>
+
+            <div class="controls">
+                <div class="control-row">
+                    <div class="material-selector">
+                        <button class="material-button active"
+                            data-material="sand">Sand</button>
+                        <button class="material-button"
+                            data-material="water">Water</button>
+                        <button class="material-button"
+                            data-material="wall">Wall</button>
+                    </div>
+                    <button id="clear-button">Clear</button>
+                </div>
+
+                <div class="control-row">
+                    <div class="slider-container">
+                        <label for="particle-size">Particle Size:</label>
+                        <input type="range" id="particle-size" min="1" max="5"
+                            value="2" step="1">
+                        <span id="size-value" class="value-display">2</span>
+                    </div>
+                </div>
+
+                <div class="control-row">
+                    <div class="slider-container">
+                        <label for="gravity-strength">Gravity:</label>
+                        <input type="range" id="gravity-strength" min="1"
+                            max="5" value="1" step="1">
+                        <span id="gravity-value" class="value-display">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/sand-game.js"></script>
+    </body>
+</html>
